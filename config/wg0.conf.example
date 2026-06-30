@@ -1,0 +1,18 @@
+# /etc/wireguard/wg0.conf  —  EXAMPLE (server side, runs on the Proxmox host)
+# Real keys are redacted. Generate with: wg genkey | tee privatekey | wg pubkey > publickey
+
+[Interface]
+Address = 10.10.10.1/24          # server's address inside the tunnel
+ListenPort = <WG_PORT>           # single UDP port forwarded at the edge router
+PrivateKey = <SERVER_PRIVATE_KEY>
+
+# --- Peer: one block per client ---
+# AllowedIPs here is the SERVER's view: it lists the single tunnel IP this
+# client is allowed to use (/32), NOT the whole subnet. This is what keeps a
+# compromised client key from being able to impersonate the whole network.
+[Peer]
+# Client: laptop
+PublicKey = <CLIENT_PUBLIC_KEY>
+PresharedKey = <CLIENT_PRESHARED_KEY>   # optional extra symmetric layer
+AllowedIPs = 10.10.10.2/32
+PersistentKeepalive = 25                # keeps NAT mappings alive for always-on clients

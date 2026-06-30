@@ -1,0 +1,10 @@
+# /etc/cf-ddns/config  —  EXAMPLE (real file is chmod 600, root-only)
+# Sourced by cf-ddns.sh at runtime. Keeps secrets out of the script and out
+# of version control. Copy to /etc/cf-ddns/config and fill in real values.
+
+CF_API_TOKEN="<CF_API_TOKEN>"     # Cloudflare token, scoped DNS:Edit + Zone:Read on ONE zone (least privilege)
+CF_ZONE="<your-domain>"           # e.g. example.com
+CF_RECORD="vpn.<your-domain>"     # the A record to keep updated
+CF_RECORD_TYPE="A"
+CF_TTL=60
+CF_PROXIED=false                  # DNS-only (gray cloud) — WireGuard cannot be proxied

@@ -1,0 +1,7 @@
+Put your three renamed screenshots in THIS folder, then delete this file:
+
+  proxmox-node-overview.png   <- Proxmox "Server View" (container + storage tree)
+  df-h-storage.png            <- the `df -h` terminal screenshot
+  pct-list.png                <- the `pct list` terminal screenshot
+
+Filenames must match exactly (lowercase, hyphens) or the images won't render.
