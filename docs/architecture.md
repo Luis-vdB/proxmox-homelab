@@ -4,7 +4,7 @@
 
 `venom` is a single bare-metal Proxmox VE node that consolidates several roles that would normally live on separate machines: a WireGuard VPN gateway, a media stack, a monitoring system, and a platform for disposable security-lab VMs. The guiding principle is **role separation with minimal exposure** — every service is isolated in its own container, and nothing is reachable from the internet except a single authenticated VPN port.
 
-![Proxmox node — container and storage overview](images/proxmox-node-overview.png)
+![Proxmox node — container and storage overview](../images/proxmox-node-overview.png)
 
 ---
 
@@ -72,7 +72,7 @@ Full VMs are reserved for the opposite case: **untrusted, disposable** workloads
 
 Three physical NVMe drives, each with one job, and a rule that data never crosses between tiers.
 
-![df -h — physical mounts](images/df-h-storage.png)
+![df -h — physical mounts](../images/df-h-storage.png)
 
 | Mount | Drive | Size | Use | Role |
 |-------|-------|------|-----|------|
