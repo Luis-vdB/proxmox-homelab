@@ -21,7 +21,7 @@ The last octet of each container's IP matches its VMID — the address is the ID
 | 130 | media-vpn | 192.168.50.130 | Docker host running a VPN-isolated download stack — all traffic forced through a VPN container, no leak path to the host's public IP. |
 | 140 | jellyfin | 192.168.50.140 | Jellyfin media server. |
 
-![pct list output](images/pct-list.png)
+![pct list output](../images/pct-list.png)
 
 ## Note — LXC 130 `mp0` warning
 
